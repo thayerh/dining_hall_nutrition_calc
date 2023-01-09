@@ -1,0 +1,13 @@
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
+
+URL = "https://dining.unc.edu/locations/top-of-lenoir/?date=2023-01-11"
+page = requests.get(URL)
+
+txt = page.text
+
+soup = BeautifulSoup(txt, 'html.parser')
+
+
+print(txt.count('Amount Per Serving'))
